@@ -1,4 +1,4 @@
-import TextAnalyzer from '../../src/analyzers/TextAnalyzer.js'
+import { TextAnalyzer } from 'texttoolkit';
 
 test('TextAnalyzer kastar på tom och whitespace-sträng', () => {
   expect(() => new TextAnalyzer('')).toThrow('Text must not be empty')

@@ -1,4 +1,4 @@
-import TextAnalyzer from '../../src/analyzers/TextAnalyzer.js'
+import { TextAnalyzer } from 'texttoolkit';
 
 describe('TextAnalyzer', () => {
   const sampleText = `

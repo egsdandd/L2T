@@ -1,4 +1,4 @@
-import TextFormatter from '../../src/formatters/TextFormatter.js'
+import { TextFormatter } from 'texttoolkit';
 
 describe('TextFormatter', () => {
   let formatter

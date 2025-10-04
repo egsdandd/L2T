@@ -1,5 +1,5 @@
-import TextTransformer from '../../src/transformers/TextTransformer.js'
-import { InvalidTypeError, EmptyStringError } from '../../src/utils/errors.js'
+import { TextTransformer } from 'texttoolkit';
+import { InvalidTypeError, EmptyStringError } from 'texttoolkit'
 
 describe('TextTransformer', () => {
   const sample = 'Anna och Otto paddlar kajak'

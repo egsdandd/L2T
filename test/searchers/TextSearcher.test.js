@@ -1,5 +1,5 @@
-import TextSearcher from '../../src/searchers/TextSearcher.js'
-import { InvalidPatternError, InvalidTypeError, EmptyStringError, InvalidBooleanError } from '../../src/utils/errors.js'
+import { TextSearcher } from 'texttoolkit';
+import { InvalidPatternError, InvalidTypeError, EmptyStringError, InvalidBooleanError } from 'texttoolkit'
 
 const simpleText = 'En röd ros. En blå ros. En ROS.'
 const utfText = 'Åsa älskar åska, och åskan älskar Åsa.'

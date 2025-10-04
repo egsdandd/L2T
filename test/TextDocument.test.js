@@ -1,4 +1,4 @@
-import TextDocument from '../src/TextDocument.js'
+import TextDocument from 'texttoolkit';
 
 const sampleText = 'Erik såg Otto och Anna paddla en kajak på ån. Madam, blev Eva av med Bob?'
 //const words = sampleText.match(/\b[a-zA-ZåäöÅÄÖ]+\b/g);

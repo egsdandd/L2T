@@ -1,6 +1,6 @@
-import TextReverser from '../../src/transformers/TextReverser.js'
-import { InvalidTypeError, InvalidBooleanError } from '../../src/utils/errors.js'
-import { EmptyStringError } from '../../src/utils/errors.js'
+import { TextReverser } from 'texttoolkit';
+import { InvalidTypeError, InvalidBooleanError } from 'texttoolkit'
+import { EmptyStringError } from 'texttoolkit'
 
 describe('TextReverser', () => {
     const sampleText = 'Eva och Bob paddlar kajak. Madam Otto Anna!'
