@@ -1,0 +1,32 @@
+{
+  "name": "texttoolkit",
+  "version": "1.0.0",
+  "description": "Uppgift L2 1DV610 - Modulär JavaScript-toolkit för textanalys",
+  "author": "Dan-Håkan Davall <dd222mk@student.lnu.se>",
+  "main": "index.js",
+  "type": "module",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "lint": "eslint src/ --ext .js",
+    "linttest": "eslint test/ --ext .js",
+    "linttest:fix": "eslint test/ --ext .js --fix",
+    "lint:fix": "eslint src/ --ext .js --fix",
+    "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js"
+  },
+  "devDependencies": {
+    "eslint": "^9.35.0",
+    "eslint-plugin-jsdoc": "^56.1.2",
+    "jest": "^29.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/egsdandd/texttoolkit.git"
+  },
+    "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/egsdandd/texttoolkit/issues"
+  },
+  "homepage": "https://github.com/egsdandd/texttoolkit#readme"
+}
