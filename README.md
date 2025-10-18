@@ -1,4 +1,3 @@
-
 # L2T - TextToolkit Test Suite
 
 ## Assignment L2 in 1DV610
@@ -113,6 +112,22 @@ const doc = new TextDocument("Hello world! This is a test document.");
 - See `test/` directory for comprehensive test coverage
 - All tests verify expected behaviors and edge cases
 - Tests ensure proper error handling and validation
+
+***
+
+## 📂 Example Files
+
+The `examples/` folder contains several example files demonstrating how to use `texttoolkit` and its classes in practice.
+
+- **exampel1.js**, **exampel2.js**, **exampel3.js**, etc. can be run directly with Node.js:
+
+```bash
+node examples/exampel1.js
+node examples/exampel2.js exempelfil.md
+node examples/exampel3.js
+```
+
+These example files demonstrate various features and use cases. Feel free to read the source code for more inspiration on how to use the toolkit.
 
 ***
 
