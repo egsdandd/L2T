@@ -1,203 +1,154 @@
 
-# texttoolkit
+# L2T - TextToolkit Test Suite
 
-_Assignment L2 in 1DV610_
+## Assignment L2 in 1DV610
 
-**Version:** 1.0.0    
+**Version:** 1.0.0
 **Author:** Dan-Håkan Davall  
 **Email:** [dd222mk@student.lnu.se](mailto:dd222mk@student.lnu.se)
 
-Documentation (README.md - this file)
-
-[For my teacher](./doc/README.teacher.md)
-
-***
-README Documents in the repo:
-
-[README.md](./README.md)
-
-[TextDocument.md](./doc/README.TextDocument.md)
-
-[TextAnalyzer.md](./doc/README.TextAnalyser.md)
-
-[TextFormatter.md](./doc/README.TextFormatters.md)
-
-[TextSearcer.md](./doc/README.TextSearcher.md)
-
-[TextTransformer.md](./doc/README.Transformer.md)
-
-[TextReverser.md](./doc/README.TextReverser.md)
-
-Utils:
-
-[inputValidator.md](./doc/README.InputValidation.md)
-[error.md](./doc/README.error.md)
-
-Classes:
-
- - [Class description](./doc/classer.md)
-
- - [Copilot-instructions](./doc/copilot-instructions.md) for details about the module
-
-Test Output:
-
-- [Test Coverage Summary](./doc/README.Testresult.md)
-- [Detailed Test Report](./doc/README.DetailedTestReport.md)
-
 ## 🗂️ Project Description
 
-This project is a **modular JavaScript toolkit** for advanced text analysis, formatting, search, and transformation – with support for Swedish (including å/ä/ö) and English.  
-**Main entry point:** `src/TextDocument.js` – gathers analyzers, formatters, searchers, and transformers into a unified API. This is part of a school project.
+This project is a **comprehensive test suite** for the `texttoolkit` npm package - a modular JavaScript toolkit for advanced text analysis, formatting, search, and transformation with support for Swedish (including å/ä/ö) and English.
 
-All public APIs are exported via `src/index.js`.
-
-***
-
-## 🏛️ Architecture Overview
-
-Key components and their roles:
-
-- **TextDocument**: Gathers analyzers, formatters, searchers, and transformers into a unified API.
-- **TextAnalyzer**: Responsible for word, character, and sentence analysis, frequency and palindrome.
-- **TextFormatter**: Handles uppercase/lowercase, capitalization, camelCase, snake_case and trim.
-- **TextSearcher**: Responsible for substring search, regexp search and related position services.
-- **TextTransformer**: Performs transformations on words and word order as well as replacement operations.
-
-Validation and error handling:
-
-- **utils/inputValidation.js**: Responsible for validating input to public methods.
-- **utils/errors.js**: Contains custom error classes for clearer error messages.
+This repository contains only the test files that verify the functionality of the `texttoolkit` package, which is included as a dependency.The `texttoolkit` package provides all public APIs and functionality.
 
 ***
 
-### Class Overview and Error Classes
+## 🧪 Test Structure Overview
 
-**Main Classes:**
+This repository contains comprehensive test suites for the following components:
 
-- **TextDocument**: Wrapper that gathers and exposes analysis, formatting, search, and transformation.
-- **TextAnalyzer**: Word counting, character and sentence analysis, frequency analysis, palindrome identification.
-- **TextFormatter**: Uppercase/lowercase, capitalization, camelCase, snake_case, trim.
-- **TextTransformer**: Transforms words and order, replacement operations.
-- **TextSearcher**: Substring and regexp search, position services.
-- **TextReverser**: Reverses text, lines, and words in various ways.
-
-**Error Classes (`utils/errors.js`):**
-
-- **EmptyStringError**: Error for empty strings.
-- **InvalidTypeError**: Type validation error.
-- **InvalidBooleanError**: Error for boolean validation.
-- **InvalidPatternError**: Error for regex validation.
-- **TooLongError**: Error for exceeded length.
-
-**Summary:**
-
-| Class              | Purpose/Scope                   |
-| :--                | :--                             |
-| TextDocument       | Aggregates all text logic/wrapper |
-| TextAnalyzer       | Statistical text analysis         |
-| TextFormatter      | Format and case transformation    |
-| TextTransformer    | Transform/change words            |
-| TextSearcher       | Substring/regex searching         |
-| TextReverser       | Various text reversal functions   |
-| EmptyStringError   | Error class for empty strings     |
-| InvalidTypeError   | Type validation error             |
-| InvalidBooleanError| Boolean validation error          |
-| InvalidPatternError| Regex validation error            |
-| TooLongError       | Length validation error           |
-
-**Total number of classes:**
-
-11 (6 main classes + 5 error classes).
+- **TextDocument**: Tests for the main wrapper class that aggregates all text operations
+- **TextAnalyzer**: Tests for word, character, and sentence analysis, frequency and palindrome detection
+- **TextFormatter**: Tests for uppercase/lowercase, capitalization, camelCase, snake_case and trim operations
+- **TextSearcher**: Tests for substring search, regex search and position services
+- **TextTransformer**: Tests for text transformations and replacement operations
+- **TextReverser**: Tests for various text reversal functions
+- **HelpFunctions**: Tests for utility functions and input validation
 
 ***
 
-## 🚀 Usage Examples
+### Test Files Overview
 
-See example in `examples/example1.js` and `examples/example2.js` for typical usage patterns and integration.
+This repository contains test suites organized by component:
 
-```javascript
-import { TextDocument } from 'texttoolkit';
-const doc = new TextDocument("Hello world! This is a test document.");
-console.log(doc.analyze().wordCount); // 7
-console.log(doc.format('uppercase')); // "HELLO WORLD! THIS IS A TEST DOCUMENT."
-console.log(doc.search('test')); // [^24]
-console.log(doc.transform('reverse')); // ".tnemucod tset a si sihT !dlrow olleH"
+```text
+test/
+├── TextDocument.test.js          # Tests for main wrapper class
+├── analyzers/
+│   └── TextAnalyzer.test.js      # Text analysis functionality tests
+├── formatters/
+│   └── TextFormatter.test.js     # Text formatting tests
+├── searchers/
+│   └── TextSearcher.test.js      # Search functionality tests  
+├── transformers/
+│   ├── TextTransformer.test.js   # Text transformation tests
+│   └── TextReverser.test.js      # Text reversal tests
+└── helpfunctions/
+    └── helpFunctions.test.js     # Utility functions tests
 ```
 
+Each test file comprehensively covers:
+
+- **Functionality testing**: Core features and methods
+- **Edge cases**: Boundary conditions and error handling  
+- **Input validation**: Type checking and error responses
+- **Swedish language support**: åäö character handling
+
+***
+
+## 🚀 Running Tests
+
+To run the complete test suite:
+
+```bash
+npm test
+```
+
+This will execute all test files using Jest and provide a comprehensive report of the `texttoolkit` package functionality.
+
+## 📋 Test Coverage
+
+The test suite covers:
+
+```javascript
+// Example of what the tests verify:
+import { TextDocument } from 'texttoolkit';
+const doc = new TextDocument("Hello world! This is a test document.");
+// Tests verify: word counting, formatting, searching, transforming
+```
 
 ***
 
 ## 🦾 Developer Workflows
 
-- **Linting:**  
-  `npm run lint` (rules in `eslint.config.js`)
-- **Testing:**  
-  `npm test` (Jest, with tests in the `test/` directory)
-- **Debugging:**  
-  Try examples in the `examples/` directory.
-- **Module imports:**  
-  ES modules – use `import/export`.
+- **Testing:**  
+  `npm test` (Jest, with tests in the `test/` directory)
+- **Module imports:**  
+  ES modules – use `import/export`
+- **Test structure:**  
+  Follow existing patterns for new test files***
+
+## ⚙️ Test Conventions
+
+- **Language support:** Tests verify Swedish/English functionality including åäö
+- **Input validation:** Tests verify error handling for invalid inputs  
+- **Edge cases:** Comprehensive testing of boundary conditions
+- **Jest patterns:** Follow established Jest testing conventions
 
 ***
 
-## ⚙️ Project-Specific Conventions
+## 🛠️ Adding New Tests
 
-- **Language support:** Swedish/English, regex covers åäö
-- **Validation:** all public methods validate input with detailed errors
-- **Statelessness:** all classes are pure except for the text state in `TextDocument` and its delegates
-- **API consistency:** all operations are exposed via `TextDocument`
-- **JSDoc:** _All public methods must be documented with JSDoc_
-
-***
-
-## 🛠️ Integration \& Extension Guidelines
-
-- Start new analyzers/formatters/searchers/transformers in the respective folder and export via `index.js`
-- Always use error classes from `utils/errors.js` for raise/throw
+- Add new test files in the appropriate subdirectory under `test/`
+- Follow existing naming conventions: `ComponentName.test.js`
+- Test both success cases and error conditions
+- Ensure tests cover Swedish character support (åäö)
 
 ***
 
-## 📄 Tests \& Examples
+## 📄 Test Information
 
-- See `test/` for expected behaviors and edge cases
-- See `examples/` for usage and integration
-- Code style and JSDoc rules in `eslint.config.js`
+- See `test/` directory for comprehensive test coverage
+- All tests verify expected behaviors and edge cases
+- Tests ensure proper error handling and validation
 
 ***
 
 ## 💻 Installation Instructions
 
-```
-git clone <repository-url>
-cd texttoolkit
+```bash
+git clone https://github.com/egsdandd/L2T.git
+cd L2T
 npm install
 ```
 
-
 ***
 
-## 📦 Dependencies, Language \& Versions
+## 📦 Dependencies \& Requirements
 
 - Node.js **v14 or later**
-- Jest for testing
-- ESLint for code style
-- _Any third-party libraries are listed in package.json_
+- Jest for testing (v29.7.0)
+- `texttoolkit` package (v1.0.1) - the package being tested
+- ES Modules support (`"type": "module"` in package.json)
 
 ***
 
-## 🧪 Test Reports
+## 🧪 Test Execution
 
-- Main modules and edge cases are covered by tests in `test/`
-- Run `npm test` for results with Jest
+- Comprehensive test coverage for all `texttoolkit` components
+- Run `npm test` to execute all tests with Jest
+- Tests use ES modules with `--experimental-vm-modules` flag
 
 ***
 
-## 🤝 Contribution Guidelines
+## 🤝 Contributing to Tests
 
 1. Fork and create a feature branch
-2. Write clear commit messages
-3. Create pull requests with a description of changes and intent
-4. Run all tests and ensure they pass before PR
+2. Add comprehensive test cases for new functionality
+3. Ensure all existing tests continue to pass
+4. Write clear commit messages describing test additions/changes
 
 ***
 
@@ -214,16 +165,6 @@ MIT License
 
 ***
 
-## 📈 Versioning and Changelog
+## 💬 Communication & Questions
 
-- Semantic versioning (MAJOR.MINOR.PATCH)
-- All changes are documented in `CHANGELOG.md`
-
-***
-
-## 💬 Communication \& Questions
-
-For questions or suggestions – update this README and notify the repo owners.
-
-
-
+For questions or suggestions about the tests, create an issue on GitHub or contact the repository owner.
